@@ -53,7 +53,7 @@ const Content = () => {
 
   return (
     <div>
-       <div className="ui action input">
+       <div className="ui action input" style={{marginBottom: "40px"}}>
   <input type="text" 
   placeholder="Search..." 
   onChange= {e =>  setSearchTerm(e.target.value)}
