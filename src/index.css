@@ -1,0 +1,47 @@
+.menu {
+  float: right;
+  width: 300px;
+}
+
+.input {
+  margin-top: 10%;
+  margin-left: 40%;
+}
+
+div.polaroid {
+  width: 128px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+}
+
+div.container {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.paginationBttns a {
+  display: flex;
+  list-style-type: none;
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid blue;
+  color: blue;
+  cursor: pointer;
+}
+.paginationBttns li {
+  float: left;
+  list-style-type: none;
+
+}
+
+.paginationBttns a:hover {
+  color: white;
+  background-color: blue;
+}
+
+.paginationActive a {
+  color: white;
+  background-color: blue;
+}
