@@ -45,3 +45,7 @@ div.container {
   color: white;
   background-color: blue;
 }
+
+.login-form {
+  width: 50vw;
+}

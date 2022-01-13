@@ -1,28 +1,29 @@
 import React from 'react';
-import { useState } from 'react/cjs/react.development';
 import '../index.css';
+import { useNavigate } from "react-router-dom";
 
-function Header() {
 
- const [loggedIn, setLoggedIn] = useState(false);
- console.log(loggedIn)
+function Header({ loggedIn }) {
 
- const toggleLogin = () => {
-  return setLoggedIn(!loggedIn)
- }
+  const navigate = useNavigate();
+
+  const handleWatched = () => {
+    if(loggedIn = true) {
+      navigate("/watchedlist")
+    } else {
+      alert("You need to be signed in to visit this page")
+    }
+  }
 
   return (
     <div className="ui inverted huge menu menu">
      <a className="item">
     Home
   </a>
- {loggedIn ? <a className="item">
-    Unavailable
-  </a>: <a className="item">
+   <a onClick = {handleWatched} className="item">
     Watched List
-  </a>}
-  {loggedIn ? <a onClick={toggleLogin} className="item">Sign in</a> 
-  : <a onClick={toggleLogin} className="item">Sign out</a>}
+  </a>
+ <a href="/login" className="item">Sign in</a> 
   </div>
   )
 }
