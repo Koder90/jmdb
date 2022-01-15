@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const UserModel = require("./models/Users");
-const MovieList = require("./models/MovieList");
+/* const MovieList = require("./models/MovieList"); */
 
 
 const cors = require ('cors')
@@ -34,15 +34,15 @@ app.post("/createUser", async (req, res) => {
   res.json(user)
 })
 
-app.post("/createMovieList", async (req, res) => {
+/* app.post("/createMovieList", async (req, res) => {
   const movie = req.body;
   const newMovieList = new MovieList(movie);
   await newMovieList.save();
 
   res.json(movie)
-})
+}) */
 
-app.get("/getMovieList", (req, res) => {
+/* app.get("/getMovieList", (req, res) => {
   MovieList.find({}, (err, result) => {
     if (err) {
       res.json(err);
@@ -52,7 +52,7 @@ app.get("/getMovieList", (req, res) => {
       console.log(res)
     }
   });
-});
+}); */
 
 app.listen(3001, () => {
   console.log("server runs perfeclty");
