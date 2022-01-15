@@ -33,7 +33,6 @@ div.container {
 .paginationBttns li {
   float: left;
   list-style-type: none;
-
 }
 
 .paginationBttns a:hover {
@@ -48,4 +47,14 @@ div.container {
 
 .login-form {
   width: 50vw;
+}
+
+#watch-list-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.mylist {
+
+width: 25%;
 }

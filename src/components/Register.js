@@ -13,13 +13,15 @@ const Register = ({
   setUsername,
   password,
   setPassword,
+  favtitle,
 }) => {
-
   const createUser = () => {
     Axios.post("http://localhost:3001/createUser", {
+      /* need to fix this in order to push favtitle to specific user */
       email: email,
       username: username,
       password: password,
+      favtitle: "",
     }).then((response) => {
       setListOfUsers([...listOfUsers, { email, username, password }]);
       console.log(listOfUsers);

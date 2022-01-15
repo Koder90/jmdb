@@ -15,6 +15,7 @@ const App = () => {
   const [registered, setRegistered] = useState(false);
   const [email, setEmail] = useState("");
   const [title, setTitle] = useState("");
+  const [favtitle, setFavtitle] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [movieList, setMovieList] = useState([]);
@@ -30,13 +31,12 @@ const App = () => {
       console.log("logged in");
       setLoggedIn(true);
       console.log(loggedIn, "if true");
-      navigate("/")
+      navigate("/");
     } else {
       console.log("wrong username or password");
       setLoggedIn(false);
       console.log(loggedIn, "if false");
-      alert("Account doesn't exist. Please try again!")
-
+      alert("Account doesn't exist. Please try again!");
     }
   };
 
@@ -59,12 +59,12 @@ const App = () => {
           element={
             <Fragment>
               <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-              <Content 
-              loggedIn={loggedIn} 
-              setLoggedIn={setLoggedIn} 
-              movieList={movieList}
-              setMovieList={setMovieList}
-              title={title}
+              <Content
+                loggedIn={loggedIn}
+                setLoggedIn={setLoggedIn}
+                movieList={movieList}
+                setMovieList={setMovieList}
+                favtitle={favtitle}
               />
             </Fragment>
           }
@@ -102,14 +102,10 @@ const App = () => {
             />
           }
         />
-        <Route 
-        exact path ="/watchedlist"
-        element={
-          <WatchedList 
-          loggedIn={loggedIn}
-          movieList={movieList}
-          />
-        }
+        <Route
+          exact
+          path="/watchedlist"
+          element={<WatchedList loggedIn={loggedIn} movieList={movieList} />}
         />
       </Routes>
     </div>

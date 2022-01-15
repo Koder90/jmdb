@@ -4,7 +4,7 @@ import ReactPaginate from "react-paginate";
 import "../index.css";
 import "semantic-ui-css/semantic.min.css";
 
-const Content = ({ loggedIn, movieList, setMovieList, title }) => {
+const Content = ({ loggedIn, movieList, setMovieList, favtitle }) => {
   const [movies, setMovies] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
   const [searchTerm, setSearchTerm] = useState("");
@@ -15,14 +15,12 @@ const Content = ({ loggedIn, movieList, setMovieList, title }) => {
     });
   }, []);
 
- 
-
   useEffect(() => {
-    Axios
-      .get("https://imdb-api.com/en/API/Top250Movies/k_iio9a455")
-      .then((response) => {
+    Axios.get("https://imdb-api.com/en/API/Top250Movies/k_iio9a455").then(
+      (response) => {
         setMovies(response.data.items);
-      });
+      }
+    );
   }, []);
 
   const moviesPerPage = 10;
@@ -44,15 +42,26 @@ const Content = ({ loggedIn, movieList, setMovieList, title }) => {
             <img src={movie.image} />
             <div className="container">
               <p>{movie.title}</p>
-              <p>{loggedIn ? <button onClick={ () => {
-    Axios.post("http://localhost:3001/createMovieList", {
-      title: movie.title,
-    }).then((response) => {
-      setMovieList([...movieList, { title }]);
-      console.log('clicked')
-      console.log(movieList);
-    });
-  }} className = "ui secondary button" type="button">Add</button> : null}</p>
+              <p>
+                {loggedIn ? (
+                  <button
+                    onClick={() => {
+                      Axios.post("http://localhost:3001/createUser", {
+                        /* not working, maybe change back to createFavoriteList */
+                        favtitle: movie.title,
+                      }).then((response) => {
+                        setMovieList([...movieList, { favtitle }]);
+                        console.log("clicked");
+                        console.log(movieList);
+                      });
+                    }}
+                    className="ui secondary button"
+                    type="button"
+                  >
+                    Add
+                  </button>
+                ) : null}
+              </p>
             </div>
           </div>
         </div>
