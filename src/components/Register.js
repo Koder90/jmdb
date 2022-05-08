@@ -1,6 +1,7 @@
 import React from "react";
 import "../index.css";
 import Axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Register = ({
   listOfUsers,
@@ -15,17 +16,19 @@ const Register = ({
   setPassword,
   favtitle,
 }) => {
+  const navigate = useNavigate();
+
   const createUser = () => {
     Axios.post("http://localhost:3001/createUser", {
       /* need to fix this in order to push favtitle to specific user */
       email: email,
       username: username,
       password: password,
-      favtitle: "",
     }).then((response) => {
       setListOfUsers([...listOfUsers, { email, username, password }]);
       console.log(listOfUsers);
     });
+    navigate("/login");
   };
 
   return (

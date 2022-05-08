@@ -46,15 +46,24 @@ div.container {
 }
 
 .login-form {
-  width: 50vw;
+  margin: 0 auto;
+  top: 25%;
+  left: 35%;
+  position: absolute;
+  width: 500px;
+  border: solid 1px rgb(179, 177, 190);
+  padding: 15px;
+  background-color: rgb(160, 155, 180);
 }
 
+
 #watch-list-header {
+  background-color: black;
+  color: white;
   text-align: center;
   margin-bottom: 30px;
 }
 
 .mylist {
-
-width: 25%;
+  width: 25%;
 }
