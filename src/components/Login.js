@@ -19,8 +19,8 @@ const Login = ({
   }, []);
 
   return (
-    <div>
-      <form className="ui form login-form">
+    <div className="login-form">
+      <form className="ui form">
         <div className="field">
           <label>Username</label>
           <input onChange={handleUserName} type="text" placeholder="Username" />

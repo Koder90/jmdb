@@ -12,13 +12,13 @@ import WatchedList from "./components/WatchedList";
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [listOfUsers, setListOfUsers] = useState([]);
+  const [userId, setUserId] = useState("");
   const [registered, setRegistered] = useState(false);
   const [email, setEmail] = useState("");
-  const [title, setTitle] = useState("");
-  const [favtitle, setFavtitle] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [movieList, setMovieList] = useState([]);
+  const [title, setTitle] = useState('')
 
   const navigate = useNavigate();
 
@@ -64,7 +64,11 @@ const App = () => {
                 setLoggedIn={setLoggedIn}
                 movieList={movieList}
                 setMovieList={setMovieList}
-                favtitle={favtitle}
+                listOfUsers={listOfUsers}
+                userId={userId}
+                setUserId={setUserId}
+                title={title}
+                setTitle={setTitle}
               />
             </Fragment>
           }
@@ -91,6 +95,8 @@ const App = () => {
             <Register
               listOfUsers={listOfUsers}
               setListOfUsers={setListOfUsers}
+              userId={userId}
+              setUserId={setUserId}
               registered={registered}
               setRegistered={setRegistered}
               email={email}
