@@ -27,7 +27,7 @@ const Login = ({
         </div>
         <div className="field">
           <label>Password</label>
-          <input onChange={handlePassword} type="text" placeholder="Password" />
+          <input onChange={handlePassword} type="password" placeholder="Password" />
         </div>
 
         <button onClick={handleLogin} className="ui button" type="button">
